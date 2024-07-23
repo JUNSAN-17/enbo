@@ -26,3 +26,21 @@
 .demo-logo{
     margin-left: -15px;
 }
+
+*{
+    overflow: hidden;
+}
+
+p{
+    margin:  6px 0px 8px 0px!important;
+    font-size: 13px;
+}
+
+.ant-card-body{
+    padding: 0px 25px  !important;
+}
+
+.ant-card-actions{
+    background-color: #ededed !important;
+   
+}
