@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Btn  from "../Btn/Btn";
+import Cards from "../Cards/Cards";
 import {
     DatabaseOutlined,
     AlertOutlined,
@@ -24,21 +26,21 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-    getItem('监控设备', '1', <span><i class="ri-camera-line"></i></span>, [
+    getItem('监控设备', '1', <span><i className="ri-camera-line"></i></span>, [
         getItem('设备状态', '2'),
         getItem('设备分组', '3'),
     ])
 ];
 const items2 = [
-    getItem('地图显示', '4', <span><i class="ri-earth-line"></i></span>),
-    getItem('监控设备管理', '5', <span><i class="ri-camera-line"></i></span>),
+    getItem('地图显示', '4', <span><i className="ri-earth-line"></i></span>),
+    getItem('监控设备管理', '5', <span><i className="ri-camera-line"></i></span>),
     getItem('防火资源管理', '6', <DatabaseOutlined />),
     getItem('报警管理', '7', <AlertOutlined />),
     getItem('历史火情', '8', <FireOutlined />),
     getItem('巡护管理', '9', <EnvironmentOutlined />),
     getItem('实景天气', '10', <SunOutlined />),
     getItem('考核管理', '11', <FileDoneOutlined />),
-    getItem('算法调度管理', '12', <span><i class="ri-reactjs-fill"></i></span>),
+    getItem('算法调度管理', '12', <span><i className  ="ri-reactjs-fill"></i></span>),
     getItem('系统管理', '13', <SettingOutlined />),
 ]
 
@@ -60,7 +62,6 @@ const Contain = () => {
                         itemSelectedColor: "#1890ff",
                         itemBorderRadius: 0,
                         darkItemSelectedBg: "#1890ff"
-
                     }
                 }
 
@@ -79,12 +80,12 @@ const Contain = () => {
                     }}
                 >
                     <div className="demo-logo" style={{ color: "#fff", fontSize: '18px' }}>
-                        <i class="ri-tree-fill"></i>
+                        <i className="ri-tree-fill"></i>
                         恩博森林资源管理平台
                     </div>
                     <Menu
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
+                        defaultSelectedKeys={['5']}
                         items={items2}
                         style={{
                             backgroundColor: '#333b46',
@@ -102,7 +103,8 @@ const Contain = () => {
                     >
                         <Menu
                             theme="dark"
-                            defaultSelectedKeys={['1']}
+                            defaultOpenKeys={['1']}
+                            defaultSelectedKeys={['2']}
                             mode="inline"
                             items={items}
                             style={{
@@ -117,14 +119,31 @@ const Contain = () => {
                     >
                         <div
                             style={{
-                                padding: 24,
+                                display:"flex",
+                                padding: "17px 0px",
                                 minHeight: 360,
                                 height: '100%',
                                 background: colorBgContainer,
                                 borderRadius: borderRadiusLG,
                             }}
                         >
-                            Bill is a cat.
+                            <div style={{width: "50%"}}>
+                                <div style={{width: "50%"}}>
+                                    <Btn></Btn>
+                                </div>
+                                <div style={{width: "100%", display: "flex" }} >
+                                    <Cards></Cards>
+                                    <Cards></Cards>
+                                </div>
+                                <div style={{width: "100%", display: "flex"}} >
+                                    <Cards></Cards>
+                                    <Cards></Cards>
+                                </div>
+                            </div>
+                            <div style={{width: "50%"}}>
+                                <Btn></Btn>
+                            </div>
+
                         </div>
                     </Content>
                 </Layout>
