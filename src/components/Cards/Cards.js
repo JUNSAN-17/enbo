@@ -17,18 +17,19 @@ const Cards = (props) => {
     const showDrawer = () => {
         setOpen(true);
     };
-    const onClose = (values) => {
+    const onClose = () => {
         setOpen(false);
     };
 
     const [form] = Form.useForm();
 
-    // 获取input中的内容
+    // 获取add_form_input中的内容
     let formData
     //定义新增确认按钮
     const addConfirm = (values) => {
         setOpen(false);
         formData = form.getFieldValue()
+        console.log(formData);
     };
 
     // 定义删除确认按钮
